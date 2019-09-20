@@ -36,12 +36,14 @@
     repo: 'https://github.com/ryanoasis/nerd-fonts.git'
     dest: '~{{ item.username }}/.fonts'
   with_items: '{{ users }}'
+  register: powerlinefonts
 
 - name: install powerline fonts
   become: yes
   become: '{{ item.username }}'
   command: '~{{ item.username }}/.fonts/install.sh'
   with_items: '{{ users }}'
+  when: powerlinefonts.changed
 
 - name: set permissions of oh-my-zsh for users
   become: yes
