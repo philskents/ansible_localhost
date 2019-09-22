@@ -1,0 +1,7 @@
+- hosts: localhost
+  roles:
+    - base
+    - role: gantsign.oh-my-zsh
+      users:
+        - username: pskentelbery
+    - nvim
