@@ -3,3 +3,9 @@
     name: '{{ item }}'
   with_items:
     - fzf
+
+- name: install homebrew casks
+  homebrew_cask:
+    name: '{{ item }}'
+  with_items:
+    - powershell
