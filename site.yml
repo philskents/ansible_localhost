@@ -3,5 +3,6 @@
     - base
     - role: gantsign.oh-my-zsh
       users:
-        - username: pskentelbery
+        - username: '{{ primary_user }}'
     - nvim
+  vars_files: ~/projects/ansible_vars/vars.yml

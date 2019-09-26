@@ -2,17 +2,16 @@
   package:
     name: '{{ item }}'
   with_items:
-    - fzf
+    - '{{ base_formulae }}'
 
 - name: tap casks
   homebrew_tap:
     name: '{{ item }}'
   with_items:
-    - homebrew/cask-drivers
+    - '{{ base_taps }}'
 
 - name: install homebrew casks
   homebrew_cask:
     name: '{{ item }}'
   with_items:
-    - powershell
-    - logitech-options
+    - '{{ base_casks }}'
